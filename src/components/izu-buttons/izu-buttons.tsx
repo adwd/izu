@@ -35,11 +35,23 @@ export class IzuButtons {
   }) writeOff: EventEmitter;
 
   handleToggle(current: boolean) {
-    this.toggle = !current;
+    const next = !current
+    this.toggle = next;
+    if (next) {
+      this.toggleOn.emit();
+    } else {
+      this.toggleOff.emit();
+    }
   }
 
   handleWrite(current: boolean) {
-    this.write = !current;
+    const next = !current
+    this.write = next;
+    if (next) {
+      this.writeOn.emit();
+    } else {
+      this.writeOff.emit();
+    }
   }
 
   render() {
