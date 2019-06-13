@@ -1,0 +1,35 @@
+div {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+}
+
+button {
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+button.write {
+  transition-duration: 0.5s;
+  background: url('https://api.iconify.design/feather:pen-tool.svg') no-repeat center center / contain;
+}
+
+button.write.on {
+  transform: rotate(-90deg);
+}
+
+button.toggle {
+  transition-duration: 0.5s;
+  background: url('https://api.iconify.design/feather:arrow-right.svg') no-repeat center center / contain;
+}
+
+button.toggle.off {
+  transform: rotate(180deg);
+}

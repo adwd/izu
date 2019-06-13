@@ -9,6 +9,7 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
+  interface IzuButtons {}
   interface MyComponent {
     /**
     * The first name
@@ -28,17 +29,30 @@ export namespace Components {
 declare global {
 
 
+  interface HTMLIzuButtonsElement extends Components.IzuButtons, HTMLStencilElement {}
+  var HTMLIzuButtonsElement: {
+    prototype: HTMLIzuButtonsElement;
+    new (): HTMLIzuButtonsElement;
+  };
+
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
   var HTMLMyComponentElement: {
     prototype: HTMLMyComponentElement;
     new (): HTMLMyComponentElement;
   };
   interface HTMLElementTagNameMap {
+    'izu-buttons': HTMLIzuButtonsElement;
     'my-component': HTMLMyComponentElement;
   }
 }
 
 declare namespace LocalJSX {
+  interface IzuButtons extends JSXBase.HTMLAttributes<HTMLIzuButtonsElement> {
+    'onToggleOff'?: (event: CustomEvent<any>) => void;
+    'onToggleOn'?: (event: CustomEvent<any>) => void;
+    'onWriteOff'?: (event: CustomEvent<any>) => void;
+    'onWriteOn'?: (event: CustomEvent<any>) => void;
+  }
   interface MyComponent extends JSXBase.HTMLAttributes<HTMLMyComponentElement> {
     /**
     * The first name
@@ -55,6 +69,7 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
+    'izu-buttons': IzuButtons;
     'my-component': MyComponent;
   }
 }
