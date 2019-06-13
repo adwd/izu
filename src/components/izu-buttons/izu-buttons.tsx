@@ -12,13 +12,15 @@ export class IzuButtons {
     composed: true,
     cancelable: true,
     bubbles: true,
-  }) toggleOn: EventEmitter;
+  })
+  toggleOn: EventEmitter;
   @Event({
     eventName: 'toggleOff',
     composed: true,
     cancelable: true,
     bubbles: true,
-  }) toggleOff: EventEmitter;
+  })
+  toggleOff: EventEmitter;
 
   @State() write = false;
   @Event({
@@ -26,16 +28,18 @@ export class IzuButtons {
     composed: true,
     cancelable: true,
     bubbles: true,
-  }) writeOn: EventEmitter;
+  })
+  writeOn: EventEmitter;
   @Event({
     eventName: 'writeOff',
     composed: true,
     cancelable: true,
     bubbles: true,
-  }) writeOff: EventEmitter;
+  })
+  writeOff: EventEmitter;
 
   handleToggle(current: boolean) {
-    const next = !current
+    const next = !current;
     this.toggle = next;
     if (next) {
       this.toggleOn.emit();
@@ -45,7 +49,7 @@ export class IzuButtons {
   }
 
   handleWrite(current: boolean) {
-    const next = !current
+    const next = !current;
     this.write = next;
     if (next) {
       this.writeOn.emit();
@@ -57,12 +61,14 @@ export class IzuButtons {
   render() {
     return (
       <div>
-        <button class={`toggle ${this.toggle ? 'on' : 'off'}`}
-          onClick={() => this.handleToggle(this.toggle)}>
-        </button>
-        <button class={`write ${this.write ? 'on' : 'off'}`}
-          onClick={() => this.handleWrite(this.write)}>
-        </button>
+        <button
+          class={`toggle ${this.toggle ? 'on' : 'off'}`}
+          onClick={() => this.handleToggle(this.toggle)}
+        ></button>
+        <button
+          class={`write ${this.write ? 'on' : 'off'}`}
+          onClick={() => this.handleWrite(this.write)}
+        ></button>
       </div>
     );
   }
