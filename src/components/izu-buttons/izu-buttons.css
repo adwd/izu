@@ -2,6 +2,18 @@ div {
   position: absolute;
   right: 12px;
   bottom: 12px;
+
+  animation-name: fade-in;
+  animation-duration: 0.5s;
+}
+
+@keyframes fade-in {
+  from {
+    right: -100px;
+  }
+  to {
+    right: 12px;
+  }
 }
 
 button {
