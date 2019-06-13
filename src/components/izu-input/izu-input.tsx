@@ -1,4 +1,4 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, State, Listen } from '@stencil/core';
 
 @Component({
   tag: 'izu-input',
@@ -6,7 +6,23 @@ import { Component, h } from '@stencil/core';
   shadow: true,
 })
 export class IzuInput {
+  @State() show = false;
+
+  @Listen('writeOn', { target: 'body' })
+  handleShow() {
+    this.show = true;
+  }
+
+  @Listen('writeOff', { target: 'body' })
+  handleHide() {
+    this.show = false;
+  }
+
   render() {
+    if (!this.show) {
+      return null;
+    }
+
     return (
       <div>
         <textarea></textarea>
