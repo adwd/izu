@@ -1,7 +1,7 @@
 {
-  "name": "izu",
+  "name": "@adwd/izu",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "izu components, custom components for a specific purpose :)",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
@@ -19,7 +19,7 @@
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "prettier": "prettier --single-quote --trailing-comma all --write \"src/**/*.{js,ts,tsx}\""
+    "prettier": "prettier --write \"src/**/*.{js,ts,tsx}\""
   },
   "devDependencies": {
     "@stencil/core": "^1.0.3",
